@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&display=swap");
+
+:root {
+  --font-body: "Josefin Sans", sans-serif;
+  --font-size-body: 18px;
+  /* Primary colors */
+  --color-pr-bright-blue: hsl(220, 98%, 61%);
+  --color-aqua: hsl(192, 100%, 67%);
+  --color-purple: hsl(280, 87%, 65%);
+  /* Light theme */
+  --color-lg-very-light-gray: hsl(0, 0%, 98%);
+  --color-lg-very-light-grayish-blue: hsl(236, 33%, 92%);
+  --color-lg-grayish-blue: hsl(233, 11%, 84%);
+  --color-lg-dark-grayish-blue: hsl(236, 9%, 61%);
+  --color-lg-very-dark-grayish-blue: hsl(235, 19%, 35%);
+  /* Dark theme */
+  --color-dr-very-dark-blue: hsl(235, 21%, 11%);
+  --color-dr-very-dark-desaturated-blue: hsl(235, 24%, 19%);
+  --color-dr-light-grayish-blue: hsl(234, 39%, 85%);
+  --color-dr-light-grayish-blue-hover: hsl(236, 33%, 92%);
+  --color-dr-dark-grayish-blue: hsl(234, 11%, 52%);
+  --color-dr-very-dark-grayish-blue: hsl(233, 14%, 35%);
+  --color-dr-very-dark-grayish-blue: hsl(237, 14%, 26%);
+}

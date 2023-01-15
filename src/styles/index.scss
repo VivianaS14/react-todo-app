@@ -1,6 +1,5 @@
-body {
-  background-color: #252525;
-  color: #eee;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-}
+@use "./variables";
+@use "./universal";
+@use "./base";
+@use "./Title";
+@use "./search";

@@ -1,0 +1,21 @@
+.app {
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.app-dark {
+  background-color: var(--color-dr-very-dark-blue);
+  background-image: url("../assets/images/bg-desktop-dark.jpg");
+}
+
+.app-light {
+  background-color: var(--color-lg-very-light-grayish-blue);
+  background-image: url("../assets/images/bg-desktop-light.jpg");
+}
