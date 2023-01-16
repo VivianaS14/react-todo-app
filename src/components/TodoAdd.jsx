@@ -1,0 +1,27 @@
+import React, { Component } from "react";
+/* Icon */
+import { BsCircle } from "react-icons/bs";
+
+export class TodoAdd extends Component {
+  render() {
+    return (
+      <div
+        className={`add-container ${
+          this.props.theme ? "add-container-dark" : "add-container-light"
+        }`}
+      >
+        <BsCircle
+          size="1.8rem"
+          color={this.props.theme ? "hsl(236, 33%, 92%)" : "hsl(237, 14%, 26%)"}
+        />
+        <input
+          className={this.props.theme ? "add-input" : "add-input-dark"}
+          type="search"
+          placeholder="Create a new todo..."
+        />
+      </div>
+    );
+  }
+}
+
+export default TodoAdd;

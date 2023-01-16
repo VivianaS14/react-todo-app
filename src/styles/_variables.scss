@@ -3,6 +3,7 @@
 :root {
   --font-body: "Josefin Sans", sans-serif;
   --font-size-body: 18px;
+  --font-size-btns: 15px;
   /* Primary colors */
   --color-pr-bright-blue: hsl(220, 98%, 61%);
   --color-aqua: hsl(192, 100%, 67%);
@@ -20,8 +21,11 @@
   --color-dr-light-grayish-blue-hover: hsl(236, 33%, 92%);
   --color-dr-dark-grayish-blue: hsl(234, 11%, 52%);
   --color-dr-very-dark-grayish-blue: hsl(233, 14%, 35%);
-  --color-dr-very-dark-grayish-blue: hsl(237, 14%, 26%);
+  --color-dr-very-dark-grayish-blues: hsl(237, 14%, 26%);
   /* Sizes */
   --app-width-size: 40rem;
+  --app-width-size-mobile: 90%;
+  --app-height-size: 25rem;
+  --app-height-size-mobile: 80%;
   --items-height-size: 4rem;
 }

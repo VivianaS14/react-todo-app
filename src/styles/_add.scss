@@ -1,4 +1,4 @@
-.search-container {
+.add-container {
   width: var(--app-width-size);
   height: var(--items-height-size);
   border-radius: 0.4rem;
@@ -15,7 +15,7 @@
     background-color: var(--color-lg-very-light-gray);
   }
 
-  .search-input {
+  .add-input {
     width: 85%;
     height: var(--items-height-size);
     font-family: var(--font-body);
@@ -23,5 +23,16 @@
     background-color: transparent;
     border: none;
     outline: none;
+
+    &-dark {
+      @extend .add-input;
+      color: var(--color-dr-light-grayish-blue);
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .add-container {
+    width: var(--app-width-size-mobile);
   }
 }
