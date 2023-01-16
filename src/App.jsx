@@ -12,7 +12,7 @@ function App() {
   return (
     <div className={`app ${theme ? "app-light" : "app-dark"}`}>
       <Title theme={theme} toggleTheme={toggleTheme} />
-      <TodoSearch />
+      <TodoSearch theme={theme} />
     </div>
   );
 }

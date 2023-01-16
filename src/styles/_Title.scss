@@ -1,17 +1,10 @@
 .title-container {
-  width: 50rem;
+  width: var(--app-width-size);
   display: flex;
   justify-content: space-between;
   align-items: center;
   letter-spacing: 1rem;
-
-  &-light {
-    color: var(--color-lg-very-light-grayish-blue);
-  }
-
-  &-dark {
-    color: var(--color-dr-very-dark-blue);
-  }
+  color: var(--color-lg-very-light-grayish-blue);
 }
 
 .btn-theme {

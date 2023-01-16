@@ -1,5 +1,27 @@
 .search-container {
-  width: 50rem;
-  height: 10rem;
-  background-color: indigo;
+  width: var(--app-width-size);
+  height: var(--items-height-size);
+  border-radius: 0.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7rem;
+
+  &-light {
+    background-color: var(--color-dr-very-dark-desaturated-blue);
+  }
+
+  &-dark {
+    background-color: var(--color-lg-very-light-gray);
+  }
+
+  .search-input {
+    width: 85%;
+    height: var(--items-height-size);
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    background-color: transparent;
+    border: none;
+    outline: none;
+  }
 }
