@@ -3,6 +3,14 @@
   height: var(--app-height-size);
   border-top-left-radius: 0.4rem;
   border-top-right-radius: 0.4rem;
+  display: flex;
+  flex-direction: column;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
   &-light {
     background-color: var(--color-lg-very-light-gray);
@@ -15,10 +23,10 @@
 }
 
 .todo-item-container {
-  width: var(--app-width-size);
-  height: var(--items-height-size);
+  width: 36.5rem;
   padding: 1rem 1.7rem;
   list-style: none;
+  border-radius: 0.4rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -73,8 +81,7 @@
 }
 
 .btns-container {
-  width: var(--app-width-size);
-  height: var(--items-height-size);
+  width: 36rem;
   padding: 1rem 2rem;
   border-bottom-left-radius: 0.4rem;
   border-bottom-right-radius: 0.4rem;
@@ -99,6 +106,7 @@
     display: flex;
     gap: 1rem;
   }
+
   .btn {
     background-color: transparent;
     border: none;
@@ -132,6 +140,10 @@
   }
 }
 
+.btns-mobile {
+  display: none;
+}
+
 @media screen and (max-width: 900px) {
   .todos-container {
     width: var(--app-width-size-mobile);
@@ -140,9 +152,66 @@
 
   .todo-item-container {
     width: var(--app-width-size-mobile);
+    padding: 1rem 0;
   }
 
   .btns-container {
     width: var(--app-width-size-mobile);
+    padding: 1rem 0;
+    justify-content: space-around;
+
+    .btns {
+      display: none;
+    }
+  }
+
+  .btns-mobile {
+    width: var(--app-width-size-mobile);
+    height: var(--items-height-size);
+    margin-top: 1rem;
+    border-radius: 0.4rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+    &-light {
+      background-color: var(--color-lg-very-light-gray);
+    }
+
+    &-dark {
+      background-color: var(--color-dr-very-dark-desaturated-blue);
+    }
+
+    .btn {
+      background-color: transparent;
+      border: none;
+      font-family: var(--font-body);
+      font-size: var(--font-size-btns);
+      cursor: pointer;
+
+      &-light {
+        color: var(--color-lg-dark-grayish-blue);
+
+        &:hover {
+          color: var(--color-lg-very-dark-grayish-blue);
+          font-weight: 700;
+        }
+      }
+
+      &-dark {
+        color: var(--color-dr-dark-grayish-blue);
+
+        &:hover {
+          color: var(--color-dr-light-grayish-blue-hover);
+          font-weight: 700;
+        }
+      }
+
+      &:active,
+      &:focus {
+        color: var(--color-pr-bright-blue);
+        font-weight: 700;
+      }
+    }
   }
 }

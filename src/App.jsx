@@ -37,7 +37,7 @@ function App() {
     <div className={`app ${theme ? "app-light" : "app-dark"}`}>
       <Title theme={theme} toggleTheme={toggleTheme} />
       <TodoAdd theme={theme} />
-      <div>
+      <div className="main-container">
         <TodoList theme={theme}>
           {todos.map((todo) => (
             <TodoItem

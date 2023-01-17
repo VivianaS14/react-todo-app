@@ -7,7 +7,7 @@ export class TodoAdd extends Component {
     return (
       <div
         className={`add-container ${
-          this.props.theme ? "add-container-dark" : "add-container-light"
+          this.props.theme ? "add-container-light" : "add-container-dark"
         }`}
       >
         <BsCircle
