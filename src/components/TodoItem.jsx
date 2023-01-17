@@ -5,6 +5,10 @@ import { BiCheck } from "react-icons/bi";
 import { FiX } from "react-icons/fi";
 
 export class TodoItem extends Component {
+  handleCompleteTodo = () => {
+    console.log("Holiii desde el check");
+  };
+
   render() {
     return (
       <li
@@ -16,7 +20,11 @@ export class TodoItem extends Component {
       >
         <div className="todo-item-text">
           {this.props.completed ? (
-            <BiCheck size="1.8rem" className="item-completed" />
+            <BiCheck
+              size="1.8rem"
+              className="item-completed"
+              onClick={this.handleCompleteTodo}
+            />
           ) : (
             <BsCircle
               size="1.8rem"
@@ -24,6 +32,7 @@ export class TodoItem extends Component {
                 this.props.theme ? "hsl(236, 33%, 92%)" : "hsl(237, 14%, 26%)"
               }
               className="item-check"
+              onClick={this.handleCompleteTodo}
             />
           )}
 
