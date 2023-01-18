@@ -65,6 +65,9 @@ export class TodoList extends Component {
       >
         {this.props.isLoading && <p>Loading...</p>}
         {this.props.error && <p>Ups hay un error!...</p>}
+        {!this.props.isLoading && !this.props.todos.length && (
+          <p>Crea tu primer todo</p>
+        )}
 
         <ul>
           {this.props.todos.map((todo) => (

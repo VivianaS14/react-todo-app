@@ -106,7 +106,9 @@ function App() {
 
   /* Effect */
   useEffect(() => {
-    getAllTodos();
+    setTimeout(() => {
+      getAllTodos();
+    }, 3000);
   }, []);
 
   return (
