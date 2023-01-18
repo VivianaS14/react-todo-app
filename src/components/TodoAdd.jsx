@@ -1,8 +1,34 @@
 import React, { Component } from "react";
 /* Icon */
 import { BsCircle } from "react-icons/bs";
+/* Api */
+import { addTodos } from "../api";
 
 export class TodoAdd extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      newTodo: "",
+    };
+  }
+
+  addTodos = async (_newTodo) => {
+    try {
+      await addTodos(_newTodo);
+    } catch (error) {
+      this.setState({ todos: [], isLoading: false, error: true });
+    }
+  };
+
+  handleAddTodo = (e, _newTodo) => {
+    if (e.key === "Enter") {
+      this.addTodos(this.state.newTodo);
+      this.setState({ newTodo: "" });
+      //window.location.reload(true);
+      setTimeout(() => window.location.reload(true), 300);
+    }
+  };
+
   render() {
     return (
       <div
@@ -18,6 +44,9 @@ export class TodoAdd extends Component {
           className={this.props.theme ? "add-input" : "add-input-dark"}
           type="search"
           placeholder="Create a new todo..."
+          value={this.state.newTodo}
+          onChange={(e) => this.setState({ newTodo: e.target.value })}
+          onKeyDown={(e) => this.handleAddTodo(e, this.state.newTodo)}
         />
       </div>
     );

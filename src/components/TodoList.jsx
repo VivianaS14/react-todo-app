@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import TodoItem from "./TodoItem";
-import { getTodos } from "../api";
+import { getTodos, putTodos, deleteTodos } from "../api";
 
 export class TodoList extends Component {
   constructor(props) {
@@ -21,8 +21,39 @@ export class TodoList extends Component {
     }
   };
 
+  putTodos = async (_newTodos, _id) => {
+    try {
+      await putTodos(_newTodos, _id);
+      this.getTodos();
+    } catch (error) {
+      this.setState({ todos: [], isLoading: false, error: true });
+    }
+  };
+
+  deleteTodos = async (_id) => {
+    try {
+      await deleteTodos(_id);
+      this.getTodos();
+    } catch (error) {
+      this.setState({ todos: [], isLoading: false, error: true });
+    }
+  };
+
   componentDidMount = () => {
     this.getTodos();
+  };
+
+  handleCompleteTodo = (_id) => {
+    let newTodos = [...this.state.todos];
+    let todoIndex = this.state.todos.findIndex((todo) => todo.id === _id);
+    newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
+    this.putTodos(newTodos[todoIndex], newTodos[todoIndex].id);
+  };
+
+  handleDeleteTodo = (_id) => {
+    let newTodos = [...this.state.todos];
+    let todoIndex = this.state.todos.findIndex((todo) => todo.id === _id);
+    this.deleteTodos(newTodos[todoIndex].id);
   };
 
   render() {
@@ -36,12 +67,15 @@ export class TodoList extends Component {
         {this.state.error && <p>Ups hay un error!...</p>}
 
         <ul>
-          {this.state.todos.map((todo, i) => (
+          {this.state.todos.map((todo) => (
             <TodoItem
-              key={i}
+              key={todo.id}
+              id={todo.id}
               theme={this.props.theme}
               text={todo.content}
               completed={todo.completed}
+              onComplete={() => this.handleCompleteTodo(todo.id)}
+              onDelete={() => this.handleDeleteTodo(todo.id)}
             />
           ))}
         </ul>

@@ -6,7 +6,7 @@ import TodoButtons from "./components/TodoButtons";
 
 function App() {
   /* Theme */
-  const [theme, setTheme] = useState(true);
+  const [theme, setTheme] = useState(false);
   const toggleTheme = () => {
     setTheme(!theme);
   };
