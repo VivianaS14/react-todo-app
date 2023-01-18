@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: "https://todo-app-db.vercel.app"
+    baseURL: "http://localhost:3000"
 })
 
 const getTodos = async () => {

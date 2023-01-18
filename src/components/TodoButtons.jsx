@@ -13,22 +13,26 @@ export class TodoButtons extends Component {
           <div className="btns ">
             <button
               className={`btn ${this.props.theme ? "btn-light" : "btn-dark"}`}
+              onClick={this.props.allTodos}
             >
               All
             </button>
             <button
               className={`btn ${this.props.theme ? "btn-light" : "btn-dark"}`}
+              onClick={this.props.activeTodos}
             >
               Active
             </button>
             <button
               className={`btn ${this.props.theme ? "btn-light" : "btn-dark"}`}
+              onClick={this.props.completeTodos}
             >
               Completed
             </button>
           </div>
           <button
             className={`btn ${this.props.theme ? "btn-light" : "btn-dark"}`}
+            onClick={this.props.deleteCompletedTodos}
           >
             Clear Completed
           </button>
@@ -40,16 +44,19 @@ export class TodoButtons extends Component {
         >
           <button
             className={`btn ${this.props.theme ? "btn-light" : "btn-dark"}`}
+            onClick={this.props.allTodos}
           >
             All
           </button>
           <button
             className={`btn ${this.props.theme ? "btn-light" : "btn-dark"}`}
+            onClick={this.props.activeTodos}
           >
             Active
           </button>
           <button
             className={`btn ${this.props.theme ? "btn-light" : "btn-dark"}`}
+            onClick={this.props.completeTodos}
           >
             Completed
           </button>

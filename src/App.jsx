@@ -43,7 +43,6 @@ function App() {
   const getAllTodos = async () => {
     try {
       const res = await getTodos();
-      console.log(res.data);
       setTodos(res.data);
       setIsLoading(false);
     } catch (error) {
@@ -88,6 +87,23 @@ function App() {
   /* Count completed */
   const leftsTodos = todos.filter((todo) => !todo.completed).length;
 
+  /* Filters */
+  const filterActiveTodos = async () => {
+    let copyTodos = await getTodos();
+    setTodos(copyTodos.data.filter((todo) => !todo.completed));
+  };
+  const filterCompletedTodos = async () => {
+    let copyTodos = await getTodos();
+    setTodos(copyTodos.data.filter((todo) => todo.completed));
+  };
+  const deleteAllCompleted = async () => {
+    let copyTodos = [...todos];
+    let completed = copyTodos.filter((todo) => todo.completed);
+    completed.forEach((todo) => {
+      deleteTodo(todo.id);
+    });
+  };
+
   /* Effect */
   useEffect(() => {
     getAllTodos();
@@ -111,7 +127,14 @@ function App() {
           handleCompleteTodo={handleCompleteTodo}
           handelDeleteTodo={handelDeleteTodo}
         />
-        <TodoButtons theme={theme} uncompleted={leftsTodos} />
+        <TodoButtons
+          theme={theme}
+          uncompleted={leftsTodos}
+          allTodos={getAllTodos}
+          activeTodos={filterActiveTodos}
+          completeTodos={filterCompletedTodos}
+          deleteCompletedTodos={deleteAllCompleted}
+        />
       </div>
     </div>
   );
