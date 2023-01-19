@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import TodoItem from "./TodoItem";
 import { getTodos, putTodos, deleteTodos } from "../api";
+import FirstTodo from "../layouts/FirstTodo";
+import Loader from "../layouts/Loader";
+import Error from "../layouts/Error";
 
 export class TodoList extends Component {
   /* constructor(props) {
@@ -63,10 +66,10 @@ export class TodoList extends Component {
           this.props.theme ? "todos-container-light" : "todos-container-dark"
         }`}
       >
-        {this.props.isLoading && <p>Loading...</p>}
-        {this.props.error && <p>Ups hay un error!...</p>}
+        {this.props.error && <Error theme={this.props.theme} />}
+        {this.props.isLoading && <Loader />}
         {!this.props.isLoading && !this.props.todos.length && (
-          <p>Crea tu primer todo</p>
+          <FirstTodo theme={this.props.theme} />
         )}
 
         <ul>
